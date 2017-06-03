@@ -14,30 +14,23 @@ public class PageController {
 	@RequestMapping(value= { "/", "/home", "/index"} )
 	public ModelAndView index(){
 		ModelAndView mav=new ModelAndView("page");
-		mav.addObject("message", "Welcome To World");
+		mav.addObject("title", "Home");
+		mav.addObject("userClickedHome", true);
 		return mav;
 	}
 	
-	
-//	@RequestMapping(value=  "/test" )
-//	public ModelAndView test(@RequestParam(value="greeting" ,required=false) String message){
-//		if(message==null){
-//			 message="Hey What'sUp";
-//		}
-//		
-//		ModelAndView mav=new ModelAndView( "page");
-//		mav.addObject("message", message);
-//		return mav;
-//	}
-	
-	@RequestMapping(value=  "/test/{message}" )
-	public ModelAndView test(@PathVariable("message") String message){
-		if(message==null){
-			 message="Hey What'sUp";
-		}
-		
-		ModelAndView mav=new ModelAndView( "page");
-		mav.addObject("message", message);
+	@RequestMapping(value= "about" )
+	public ModelAndView about(){
+		ModelAndView mav=new ModelAndView("page");
+		mav.addObject("title", "AboutUs");
+		mav.addObject("userClickedAbout", true);
+		return mav;
+	}
+	@RequestMapping(value= "contact" )
+	public ModelAndView contact(){
+		ModelAndView mav=new ModelAndView("page");
+		mav.addObject("title", "contact");
+		mav.addObject("userClickedcontact", true);
 		return mav;
 	}
 }
