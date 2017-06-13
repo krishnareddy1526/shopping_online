@@ -18,12 +18,19 @@
 <meta name="author" content="">
 
 <title>Shop Homepage - ${ title } </title>
+<script>
+   window.menu='${ title }';
+</script>
 
 <!-- Bootstrap Core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 
+
+<link href="${css}/bootstarp-readable-theme.css" rel="stylesheet">
+
+
 <!-- Custom CSS -->
-<link href="${css}/myapp.css" rel="stylesheet">
+<link href="${css}/app.css" rel="stylesheet">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,10 +42,14 @@
 </head>
 
 <body>
-
+    <div class="wrapper">
 	<!-- Navigation -->
     <%@include file="./shared/navbar.jsp" %>
+    
+    
+    
 	<!-- Page Content -->
+	<div class="content">
 	<c:if test="${userClickedHome == true}">
 	<%@include file="home.jsp" %>
 	</c:if>
@@ -50,8 +61,10 @@
 	<c:if test="${userClickedcontact == true}">
 	<%@include file="contact.jsp" %>
 	</c:if>
+	
+	</div>
 	<!-- /.container -->
-  
+    
 
 	<!-- Footer  -->
     <%@include file="./shared/footer.jsp" %>
@@ -60,6 +73,10 @@
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="${js}/bootstrap.min.js"></script>
+	
+	<!-- Own JavaScript -->
+	<script src="${js}/myapp.js"></script>
+	</div>
 
 </body>
 

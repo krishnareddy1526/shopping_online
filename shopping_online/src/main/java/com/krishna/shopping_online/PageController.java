@@ -29,7 +29,7 @@ public class PageController {
 	@RequestMapping(value= "contact" )
 	public ModelAndView contact(){
 		ModelAndView mav=new ModelAndView("page");
-		mav.addObject("title", "contact");
+		mav.addObject("title", "contactus");
 		mav.addObject("userClickedcontact", true);
 		return mav;
 	}
